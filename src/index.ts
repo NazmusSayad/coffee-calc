@@ -14,6 +14,14 @@ export type CoffeeCalculatorInputOptions = r.inferInput<
 export type CoffeeCalculatorOutputOptions = r.inferOutput<
   typeof coffeeCalculatorOptions
 >
+export type CoffeeResult = {
+  coffee: number
+  sugar: number
+  creamer: number
+  water: number
+  ingredients: number
+  total: number
+}
 
 export default class CoffeeCalculator {
   private coffee: number
@@ -43,7 +51,7 @@ export default class CoffeeCalculator {
     this.total = total
   }
 
-  getByCoffee(amount: number) {
+  getByCoffee(amount: number): CoffeeResult {
     const coffee = amount
     const ratio = amount / this.coffee
     return {
@@ -56,7 +64,7 @@ export default class CoffeeCalculator {
     }
   }
 
-  getBySugar(amount: number) {
+  getBySugar(amount: number): CoffeeResult {
     const sugar = amount
     const ratio = amount / this.sugar
     return {
@@ -69,7 +77,7 @@ export default class CoffeeCalculator {
     }
   }
 
-  getByCreamer(amount: number) {
+  getByCreamer(amount: number): CoffeeResult {
     const creamer = amount
     const ratio = amount / this.creamer
     return {
@@ -82,7 +90,7 @@ export default class CoffeeCalculator {
     }
   }
 
-  getByWater(amount: number) {
+  getByWater(amount: number): CoffeeResult {
     const water = amount
     const ratio = amount / this.water
     return {
@@ -95,7 +103,7 @@ export default class CoffeeCalculator {
     }
   }
 
-  getByIngredients(amount: number) {
+  getByIngredients(amount: number): CoffeeResult {
     const ingredients = amount
     const ratio = amount / this.ingredients
     return {
@@ -108,7 +116,7 @@ export default class CoffeeCalculator {
     }
   }
 
-  getByTotal(amount: number) {
+  getByTotal(amount: number): CoffeeResult {
     const total = amount
     const ratio = amount / this.total
     return {
