@@ -8,6 +8,13 @@ export const coffeeCalculatorOptions = r.object({
   superAccurate: r.boolean().default(false),
 })
 
+export type CoffeeCalculatorInputOptions = r.inferInput<
+  typeof coffeeCalculatorOptions
+>
+export type CoffeeCalculatorOutputOptions = r.inferOutput<
+  typeof coffeeCalculatorOptions
+>
+
 export default class CoffeeCalculator {
   private coffee: number
   private sugar: number
@@ -16,7 +23,7 @@ export default class CoffeeCalculator {
   private ingredients: number
   private total: number
 
-  constructor(ratio: r.inferInput<typeof coffeeCalculatorOptions>) {
+  constructor(ratio: CoffeeCalculatorInputOptions) {
     const conf = coffeeCalculatorOptions.parse(ratio)
 
     const coffee = conf.coffeeRatio
