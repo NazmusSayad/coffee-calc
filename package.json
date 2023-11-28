@@ -4,7 +4,7 @@
 		"typescript": "^5.3.2"
 	},
 	"name": "coffee-calc",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"scripts": {
 		"dev": "jspac dev",
 		"build": "jspac build"
